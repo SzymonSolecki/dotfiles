@@ -1,0 +1,73 @@
+XTerm.termName: xterm-256color
+
+! special
+*.background:   #080809
+*.foreground:   #00cc00
+*.cursorColor:  #00cc00
+
+! black
+*.color0:       #0b0b0c
+*.color8:       #737475
+
+! red
+*.color1:       #e31a1c
+*.color9:       #e31a1c
+
+! green
+*.color2:       #31a354
+*.color10:      #31a354
+
+! yellow
+*.color3:       #dca060
+*.color11:      #e53935
+
+! blue
+*.color4:       #3182bd
+*.color12:      #3182bd
+
+! magenta
+*.color5:       #756bb1
+*.color13:      #756bb1
+
+! cyan
+*.color6:       #80b1d3
+*.color14:      #80b1d3
+
+! white
+*color7:        #a8a8a8
+*color15:       #ffffff
+
+URxvt.depth: 32
+URxvt.background: rgba:0800/0800/0900/ffff
+URxvt.letterSpace: 1
+!URxvt.transparent: true
+!URxvt.shading: 20
+URxvt.tintColor: white
+URxvt.font: xft:Meslo LG S DZ for Powerline:style=Mono:size=11,xft:Hack Nerd Font Mono:style=Mono:size=13
+
+!!URxvt.font: xft:Hack Nerd Font:size=10
+!!URxvt.boldFont: xft:Hack Nerd Font:size=10
+URxvt.scrollBar:	false
+URxvt.cursorColor: #00ff00
+*foreground_bold: #00ff00
+
+URxvt.perl-ext-common: resize-font,default,matcher,tabbedex
+URxvt.keysym.C-Down:  resize-font:smaller
+URxvt.keysym.C-Up:    resize-font:bigger
+
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.tabbed.tabbar-fg: 7
+URxvt.tabbed.tabbar-bg: 6
+URxvt.tabbed.tab-fg: 14
+URxvt.tabbed.tab-bg: 6
+URxvt.tabbed.autohide:  yes
+URxvt.tabbed.new-button:  no
+URxvt.tabbed.title: false
+
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~
+URxvt*iso14755: False

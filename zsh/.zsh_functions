@@ -1,0 +1,3 @@
+cdp() {
+    cd ~/Documents/Dev/$1
+}

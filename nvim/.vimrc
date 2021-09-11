@@ -1,7 +1,3 @@
- "Things to setup colors etc
-set t_8b=[48;2;%lu;%lu;%lum
-set t_Co=256
-
 " nvim stuff
 if (empty($TMUX))
 if (has("nvim"))
@@ -49,7 +45,7 @@ Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'unblevable/quick-scope'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'ryanoasis/vim-devicons'
@@ -66,14 +62,14 @@ call plug#end()
 "colorscheme darcula
 "colorscheme hybrid
 "colorscheme horizon
-"colorscheme molokai
+colorscheme molokai
 
 "colorscheme palenight
 "colorscheme landscape
 
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
-colorscheme tokyonight
+"colorscheme tokyonight
 
 "ayi colorscheme colors
 let ayucolor="dark"
@@ -93,8 +89,8 @@ set mouse=a
 set hidden
 set guicursor=
 set noshowmode
-set foldmethod=indent
-set foldnestmax=1
+set foldmethod=marker
+set foldlevel=0
 set autoindent
 set number
 set ignorecase
@@ -118,8 +114,6 @@ set wrapscan
 set hlsearch
 hi Search ctermbg=red
 hi Search ctermfg=white
-set noswapfile
-set nobackup
 set scrolloff=8
 set timeoutlen=1000 ttimeoutlen=500
 
@@ -136,7 +130,8 @@ set completeopt=noinsert,menuone,noselect,preview
 " General settings END ________________________________________________________
 
 " Fixers and compile/execute __________________________________________________
-nnoremap = :call CocAction('format')<CR>
+"nnoremap = :call CocAction('format')<CR>
+nnoremap = :ALEFix<CR>
 
 autocmd FileType javascript,html,css setlocal ts=2 sw=2 expandtab
 let g:autopep8_disable_show_diff=1
@@ -312,8 +307,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-vmap = <Plug>(coc-format-selected)
-nmap = <Plug>(coc-format-selected)
+"vmap = <Plug>(coc-format-selected)
+"nmap = <Plug>(coc-format-selected)
 
 " ads blank line on enter when using brackets
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
@@ -349,3 +344,29 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " vim-session config
 let g:session_autosave = 'no'
+set clipboard=unnamedplus
+
+" tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
+if exists('$TMUX')
+   " set insert mode to a cyan vertical line   
+   let &t_SI .= "\<esc>Ptmux;\<esc>\<esc>[6 q\<esc>\\"
+   let &t_SI .= "\<esc>Ptmux;\<esc>\<esc>]12;cyan\x7\<esc>\\"
+   " set normal mode to a green block
+   let &t_EI .= "\<esc>Ptmux;\<esc>\<esc>[2 q\<esc>\\"
+   let &t_EI .= "\<esc>Ptmux;\<esc>\<esc>]12;green\x7\<esc>\\"
+   " set replace mode to an orange underscore
+   let &t_SR .= "\<esc>Ptmux;\<esc>\<esc>[4 q\<esc>\\"
+   let &t_SR .= "\<esc>Ptmux;\<esc>\<esc>]12;orange\x7\<esc>\\"
+
+   " initialize cursor shape/color on startup (silent !echo approach doesn't seem to work for tmux)
+   augroup ResetCursorShape
+      au!
+      autocmd VimEnter * startinsert | stopinsert
+      autocmd VimEnter * normal! :startinsert :stopinsert
+      autocmd VimEnter * :normal :startinsert :stopinsert
+   augroup END
+
+   " reset cursor when leaving tmux
+   autocmd VimLeave * silent !echo -ne "\033Ptmux;\033\033[2 q\033\\"
+   autocmd VimLeave * silent !echo -ne "\033Ptmux;\033\033]12;gray\007\033\\"
+endif

@@ -107,7 +107,6 @@ runtime ./maps.vim
 " ---------------------------------------------------------------------
 
 "colorscheme gruvbox
-colorscheme ayu
 "colorscheme darcula
 "colorscheme hybrid
 "colorscheme horizon
@@ -122,6 +121,7 @@ colorscheme ayu
 "ayu colorscheme colors
 "let ayucolor="dark"
 let ayucolor="mirage"
+colorscheme ayu
 
 " nvim stuff
 if (empty($TMUX))

@@ -13,8 +13,9 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 
 "NerdTree
-map <leader>o :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
 
 "show whitespaces
 nmap <leader>l :set list!<CR>

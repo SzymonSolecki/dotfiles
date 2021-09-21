@@ -78,7 +78,6 @@ HIST_STAMPS="dd.mm.yyyy"
 plugins=(
   git
   zsh-autosuggestions 
-  zsh-256color
 )
 
 
@@ -150,7 +149,7 @@ alias clc='clear'
 alias D='cd ~/Downloads'
 alias PS='cd ~/Pictures/Screenshots'
 alias PP='cd ~/Pictures'
-alias l='lsd -Fla'
+alias l='ls -alh'
 alias vim='nvim'
 alias open='xdg-open'
 
@@ -163,8 +162,6 @@ bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 bindkey "\e[3~" delete-char
 
-
-eval $(thefuck --alias)
 
 # Open a new window in this term's cwd
 alias nw="termite"

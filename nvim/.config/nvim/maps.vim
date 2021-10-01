@@ -13,6 +13,7 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 
 "NerdTree
+nnoremap <leader>o :NERDTreeToggle<CR>
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
@@ -34,6 +35,10 @@ nnoremap <C-l> :tabnext<CR>
 "Copy to clipboard
 vnoremap <C-c> "+y
 noremap <C-p> "+P
+
+" move blocks up and down
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " adding blank lines above or below
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>

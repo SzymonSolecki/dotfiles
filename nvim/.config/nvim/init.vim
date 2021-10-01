@@ -139,6 +139,13 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 endif
 
+highlight Cursor guifg=white guibg=lime
+highlight iCursor guifg=white guibg=lime
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
+
 "}}}
 
 "set runtimepath^=~/.vim runtimepath+=~/.vim/after

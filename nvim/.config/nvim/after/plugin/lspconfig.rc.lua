@@ -1,4 +1,4 @@
-local nvim_lsp = require('lspconfig')
+local nvim_lsp = require 'lspconfig'
 
 --vim.lsp.set_log_level("debug")
 
@@ -33,8 +33,6 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 
-  require'completion'.on_attach(client, bufnr)
-
   protocol.CompletionItemKind = {
     '', -- Text
     '', -- Method
@@ -66,12 +64,13 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
+
 local servers = { 'pyright', 'tsserver', 'dartls' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
+    nvim_lsp[lsp].setup(coq.lsp_ensure_capabilities({
+        on_attach = on_attach,
+        flags = {
+            debounce_text_changes = 150,
+        }
+    }))
 end

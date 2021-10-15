@@ -39,7 +39,9 @@ if has("nvim")
   Plug 'glepnir/lspsaga.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'windwp/nvim-autopairs'
-  Plug 'nvim-lua/completion-nvim'
+  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+  Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+  "Plug 'nvim-lua/completion-nvim'
 endif
 
 call plug#end()

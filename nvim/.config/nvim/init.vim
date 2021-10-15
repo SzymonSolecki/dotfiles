@@ -77,6 +77,11 @@ set formatoptions+=r
 " vim-session config
 let g:session_autosave = 'no'
 set clipboard=unnamedplus
+" coq settings
+let g:coq_settings = { 
+    \ 'auto_start': 'shut-up',
+    \ }
+
 "}}}
 
 " File types "{{{

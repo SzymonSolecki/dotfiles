@@ -11,7 +11,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
 " do it later
-"Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
 "Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'godlygeek/tabular'
@@ -29,8 +29,11 @@ Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'unblevable/quick-scope'
 Plug 'Yggdroot/indentLine'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
 Plug 'tomasr/molokai'
 Plug 'ayu-theme/ayu-vim'
 
@@ -41,7 +44,6 @@ if has("nvim")
   Plug 'windwp/nvim-autopairs'
   Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
   Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-  "Plug 'nvim-lua/completion-nvim'
 endif
 
 call plug#end()

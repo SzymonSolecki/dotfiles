@@ -68,6 +68,7 @@ nnoremap <leader>fs <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>gh <cmd>lua require('telescope.builtin').lsp_references()<cr>
 
 " quickscope plugin config
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']

@@ -28,7 +28,7 @@ nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
 nnoremap <silent><leader>rn <cmd>lua require('lspsaga.rename').rename()<CR>
 
 nnoremap <silent> <leader>gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-nnoremap <silent> <leader>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+"nnoremap <silent> <leader>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 
 nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
 vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>

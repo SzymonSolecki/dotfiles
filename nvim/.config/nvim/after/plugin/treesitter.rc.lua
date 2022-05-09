@@ -14,6 +14,7 @@ require'nvim-treesitter.configs'.setup {
     "yaml",
     "html",
     "scss",
-    "python"
+    "python",
+    "rust"
   },
 }

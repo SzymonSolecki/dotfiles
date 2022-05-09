@@ -19,19 +19,22 @@ saga.init_lsp_saga {
 
 EOF
 
-nnoremap <silent> <A-k> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
-nnoremap <silent> <A-j> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
-nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+nnoremap <silent> <A-k> <cmd>Lspsaga diagnostic_jump_prev<cr>
+nnoremap <silent> <A-j> <cmd>Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent><leader>cc <cmd>Lspsaga show_line_diagnostics<cr>
 
-nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
+nnoremap <silent> <C-u> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>
+nnoremap <silent> <C-d> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>
 
-nnoremap <silent><leader>rn <cmd>lua require('lspsaga.rename').rename()<CR>
+nnoremap <silent>K <cmd>Lspsaga hover_doc<cr>
+
+nnoremap <silent><leader>rn <cmd>Lspsaga rename<cr>
 
 nnoremap <silent> <leader>gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 "nnoremap <silent> <leader>gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+nnoremap <silent><leader>ca <cmd>Lspsaga code_action<cr>
+vnoremap <silent><leader>ca :<c-u>Lspsaga range_code_action<cr>
 
 nnoremap <silent> <A-d> <cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>
 tnoremap <silent> <A-d> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>

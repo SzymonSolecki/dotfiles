@@ -162,6 +162,7 @@ runtime ./maps.vim
 "colorscheme molokai
 "colorscheme palenight
 "colorscheme landscape
+colorscheme duskfox
 
 "let g:tokyonight_style = 'night' " available: night, storm
 "let g:tokyonight_enable_italic = 1
@@ -169,8 +170,8 @@ runtime ./maps.vim
 
 "ayu colorscheme colors
 "let ayucolor="dark"
-let ayucolor="mirage"
-colorscheme ayu
+let ayucolor="dark"
+"colorscheme ayu
 
 " nvim stuff
 if (empty($TMUX))
@@ -194,6 +195,20 @@ set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+
+set clipboard+=unnamedplus
+let g:clipboard = {
+          \   'name': 'win32yank-wsl',
+          \   'copy': {
+          \      '+': 'win32yank.exe -i --crlf',
+          \      '*': 'win32yank.exe -i --crlf',
+          \    },
+          \   'paste': {
+          \      '+': 'win32yank.exe -o --lf',
+          \      '*': 'win32yank.exe -o --lf',
+          \   },
+          \   'cache_enabled': 0,
+          \ }
 
 "}}}
 

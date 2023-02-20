@@ -6,6 +6,8 @@ return {
     return {
       sources = {
         nls.builtins.formatting.stylua,
+        nls.builtins.formatting.isort,
+        nls.builtins.diagnostics.pylint,
       },
     }
   end,

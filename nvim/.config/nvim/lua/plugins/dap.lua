@@ -252,6 +252,22 @@ return {
           py.setup(os.getenv("VIRTUAL_ENV") .. "/bin/python", opts)
           py.test_runner = "pytest"
         end,
+        keys = {
+          {
+            "<leader>dn",
+            function()
+              require("dap-python").test_method()
+            end,
+            desc = "test method",
+          },
+          {
+            "<leader>df",
+            function()
+              require("dap-python").test_class()
+            end,
+            desc = "test class",
+          },
+        },
       },
       {
         "theHamsta/nvim-dap-virtual-text",

@@ -183,7 +183,6 @@ return {
     },
     config = function()
       local dap = require("dap")
-      dap.defaults.fallback.terminal_win_cmd = "15split new"
       dap.defaults.fallback.exception_breakpoints = { "uncaught" } -- { 'raised', 'uncaught' }
 
       vim.fn.sign_define("DapBreakpoint", {
@@ -208,6 +207,12 @@ return {
       table.insert(dap.configurations.python, {
         type = "python",
         request = "launch",
+        name = "Default interpeter launch",
+        program = "${file}",
+      })
+      table.insert(dap.configurations.python, {
+        type = "python",
+        request = "launch",
         name = "Launch file",
         program = "${file}",
         pythonPath = function()
@@ -217,25 +222,12 @@ return {
       table.insert(dap.configurations.python, {
         type = "python",
         request = "launch",
-        name = "FastAPI",
-        program = function()
-          return "./main.py"
-        end,
-        pythonPath = function()
-          return "python"
-        end,
-      })
-      table.insert(dap.configurations.python, {
-        type = "python",
-        request = "launch",
-        name = "FastAPI module",
+        name = "FastAPI main:app",
         module = "uvicorn",
         args = {
           "main:app",
-          -- '--reload', -- doesn't work
           "--use-colors",
         },
-        pythonPath = "python",
         console = "integratedTerminal",
       })
     end,
@@ -245,7 +237,6 @@ return {
         lazy = true,
         opts = {
           include_configs = true,
-          console = "internalConsole",
         },
         config = function(_, opts)
           local py = require("dap-python")

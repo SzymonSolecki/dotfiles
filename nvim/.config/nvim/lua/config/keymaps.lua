@@ -7,3 +7,5 @@ vim.keymap.set("i", "kj", "<Esc>", { desc = "Escape", noremap = true, silent = t
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
+
+vim.keymap.set("x", "<leader>p", '"_dP', { noremap = true, silent = true })

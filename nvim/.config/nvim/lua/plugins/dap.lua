@@ -4,56 +4,9 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     lazy = true,
-    opts = {
-      icons = {
-        expanded = "",
-        collapsed = "",
-        current_frame = "▸",
-      },
-      layouts = {
-        {
-          elements = {
-            { id = "scopes", size = 0.4 },
-            { id = "breakpoints", size = 0.1 },
-            "stacks",
-            "watches",
-          },
-          size = 45,
-          position = "left",
-        },
-        {
-          elements = {
-            "repl",
-            -- 'console',
-          },
-          size = 12,
-          position = "bottom",
-        },
-      },
-      controls = {
-        enabled = true,
-      },
-      render = {
-        max_type_length = nil,
-        max_value_lines = nil,
-      },
-    },
     config = function(_, opts)
-      local ns = vim.api.nvim_create_namespace("dap")
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = {
-          "dap-repl",
-          "dapui_scopes",
-          "dapui_breakpoints",
-          "dapui_stacks",
-          "dapui_watches",
-        },
-        callback = function()
-          vim.opt_local.signcolumn = "no"
-          vim.api.nvim_win_set_hl_ns(0, ns)
-          vim.api.nvim_set_hl(ns, "EndOfBuffer", { fg = "bg", bg = "bg" })
-        end,
-      })
+      -- local ns = vim.api.nvim_create_namespace("dap")
+
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "dap-repl",
         callback = function()
@@ -62,17 +15,6 @@ return {
       })
 
       require("dapui").setup(opts)
-
-      vim.api.nvim_set_hl(0, "DapUIScope", { bold = true })
-      vim.api.nvim_set_hl(0, "DapUIDecoration", { link = "CursorLineNr" })
-      vim.api.nvim_set_hl(0, "DapUIThread", { link = "GitSignsAdd" })
-      vim.api.nvim_set_hl(0, "DapUIStoppedThread", { link = "Special" })
-      vim.api.nvim_set_hl(0, "DapUILineNumber", { link = "Normal" })
-      vim.api.nvim_set_hl(0, "DapUIType", { link = "Type" })
-      vim.api.nvim_set_hl(0, "DapUISource", { link = "Keyword" })
-      vim.api.nvim_set_hl(0, "DapUIWatchesEmpty", { link = "Comment" })
-      vim.api.nvim_set_hl(0, "DapUIWatchesValue", { link = "GitSignsAdd" })
-      vim.api.nvim_set_hl(0, "DapUIWatchesError", { link = "DiagnosticError" })
     end,
   },
   {
@@ -83,103 +25,98 @@ return {
         function()
           require("nvim-dap-virtual-text")
           require("dap").continue()
-          -- require('dapui').open {}
-          vim.opt.signcolumn = "yes:2"
+          -- require("dapui").open({})
         end,
-        desc = "continue/start debugger",
+        desc = "Continue/start debugger",
       },
       {
         "<F6>",
         function()
-          require("dap.breakpoints").clear()
+          -- require("dap.breakpoints").clear()
           require("dap").disconnect()
           require("dap").close()
           require("dapui").close({})
           vim.opt.signcolumn = "yes:1"
         end,
-        desc = "close debugger",
+        desc = "Close debugger",
       },
       {
         "<F1>",
         function()
           require("dapui").toggle({})
         end,
-        desc = "toggle sth?",
+        desc = "Toggle debug UI",
       },
       {
         "<F10>",
         function()
           require("dap").step_over()
         end,
-        desc = "step over",
+        desc = "Step over",
       },
       {
         "<F11>",
         function()
           require("dap").step_into()
         end,
-        desc = "step into",
+        desc = "Step into",
       },
       {
         "<F12>",
         function()
           require("dap").step_out()
         end,
-        desc = "step out",
+        desc = "Step out",
       },
       {
         "<F9>",
         function()
           require("dap").step_back() -- previous
         end,
-        desc = "step back",
+        desc = "Step back",
       },
       {
         "<leader>db",
         function()
           require("dap").toggle_breakpoint()
         end,
-        desc = "toggle breakpoint",
+        desc = "Toggle breakpoint",
       },
       {
         "<leader>dB",
         function()
           require("dap").set_breakpoint(vim.fn.input({ "Breakpoint condition: " }))
         end,
-        desc = "set breakpoint conditions",
+        desc = "Set breakpoint condition",
       },
       {
         "<leader>de",
         function()
           require("dap").set_exception_breakpoints()
         end,
+        desc = "Set exception breakpoint",
       },
       {
         "<leader>dl",
         function()
           require("dap").list_breakpoints()
         end,
+        desc = "List breakpoints",
       },
       {
         "<leader>dr",
         function()
           require("dap").repl.open()
         end,
+        desc = "Open REPL",
       },
       {
         "<leader>ds",
         function()
           require("dapui").float_element("scopes", { width = 80, height = 30, enter = true })
         end,
+        desc = "Open floating scopes",
       },
-      -- FIXME: <ESC> first
-      -- {
-      --     '<leader>ds',
-      --     function()
-      --         require('dap-python').debug_selection()
-      --     end,
-      --     mode = 'v',
-      -- },
     },
     config = function()
       local dap = require("dap")

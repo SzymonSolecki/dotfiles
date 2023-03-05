@@ -1,17 +1,34 @@
+-- return {
+--   {
+--     "Shatur/neovim-ayu",
+--     lazy = true,
+--     config = function()
+--       require("ayu").setup({
+--         mirage = true,
+--       })
+--     end,
+--   },
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       colorscheme = "ayu",
+--     },
+--   },
+-- }
 return {
   {
-    "Shatur/neovim-ayu",
+    "loctvl842/monokai-pro.nvim",
     lazy = true,
     config = function()
-      require("ayu").setup({
-        mirage = true,
+      require("monokai-pro").setup({
+        filter = "pro",
       })
     end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "ayu",
+      colorscheme = "monokai-pro",
     },
   },
 }

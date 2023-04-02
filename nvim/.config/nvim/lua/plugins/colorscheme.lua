@@ -1,34 +1,17 @@
--- return {
---   {
---     "Shatur/neovim-ayu",
---     lazy = true,
---     config = function()
---       require("ayu").setup({
---         mirage = true,
---       })
---     end,
---   },
---   {
---     "LazyVim/LazyVim",
---     opts = {
---       colorscheme = "ayu",
---     },
---   },
--- }
 return {
   {
-    "loctvl842/monokai-pro.nvim",
+    "rebelot/kanagawa.nvim",
     lazy = true,
-    config = function()
-      require("monokai-pro").setup({
-        filter = "pro",
-      })
-    end,
+    opts = {
+      background = {
+        dark = "wave",
+      },
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "kanagawa",
     },
   },
 }

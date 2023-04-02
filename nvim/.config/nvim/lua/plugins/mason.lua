@@ -6,6 +6,11 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
+
+        -- python stuff
+        "pyright",
+        "ruff-lsp",
+        "isort",
       },
     },
   },

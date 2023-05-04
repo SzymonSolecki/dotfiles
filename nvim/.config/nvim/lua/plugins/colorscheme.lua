@@ -1,17 +1,16 @@
 return {
   {
-    "rebelot/kanagawa.nvim",
+    "catppuccin/nvim",
     lazy = true,
+    name = "catppuccin",
     opts = {
-      background = {
-        dark = "wave",
-      },
+      flavour = "frappe",
     },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "catppuccin",
     },
   },
 }

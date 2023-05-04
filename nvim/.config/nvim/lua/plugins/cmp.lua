@@ -9,6 +9,25 @@ return {
     "hrsh7th/nvim-cmp",
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
+      local function border(hl_name)
+        return {
+          { "╭", hl_name },
+          { "─", hl_name },
+          { "╮", hl_name },
+          { "│", hl_name },
+          { "╯", hl_name },
+          { "─", hl_name },
+          { "╰", hl_name },
+          { "│", hl_name },
+        }
+      end
+      local cmp = require("cmp")
+
+      opts.window = {
+        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+      }
+
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))

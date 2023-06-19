@@ -11,19 +11,19 @@ return {
               name = "Tests",
               icon = "",
               matcher = function(buf) -- Mandatory
-                return buf.filename:match("test_")
+                return buf.name:match("test_")
               end,
             },
             {
               name = "Docs",
               matcher = function(buf)
-                return buf.filename:match("%.md") or buf.filename:match("%.txt")
+                return buf.name:match("%.md") or buf.name:match("%.txt")
               end,
             },
             {
               name = "Data",
               matcher = function(buf)
-                return buf.filename:match("%.json") or buf.filename:match("%.csv")
+                return buf.name:match("%.json") or buf.name:match("%.csv")
               end,
             },
           },

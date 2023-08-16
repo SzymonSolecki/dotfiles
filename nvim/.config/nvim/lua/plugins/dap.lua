@@ -1,213 +1,121 @@
--- source of this config https://github.com/disrupted/dotfiles/blob/master/.config/nvim/lua/plugins/dap.lua
-
 return {
-  {
-    "rcarriga/nvim-dap-ui",
-    lazy = true,
-    config = function(_, opts)
-      -- local ns = vim.api.nvim_create_namespace("dap")
-
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "dap-repl",
-        callback = function()
-          require("dap.ext.autocompl").attach()
-        end,
-      })
-
-      require("dapui").setup(opts)
-    end,
-  },
   {
     "mfussenegger/nvim-dap",
     keys = {
       {
-        "<F5>",
+        "<leader>dB",
         function()
-          require("nvim-dap-virtual-text")
-          require("dap").continue()
-          -- require("dapui").open({})
+          require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
         end,
-        desc = "Continue/start debugger",
-      },
-      {
-        "<F6>",
-        function()
-          -- require("dap.breakpoints").clear()
-          require("dap").disconnect()
-          require("dap").close()
-          require("dapui").close({})
-          vim.opt.signcolumn = "yes:1"
-        end,
-        desc = "Close debugger",
-      },
-      {
-        "<F1>",
-        function()
-          require("dapui").toggle({})
-        end,
-        desc = "Toggle debug UI",
-      },
-      {
-        "<F10>",
-        function()
-          require("dap").step_over()
-        end,
-        desc = "Step over",
-      },
-      {
-        "<F11>",
-        function()
-          require("dap").step_into()
-        end,
-        desc = "Step into",
-      },
-      {
-        "<F12>",
-        function()
-          require("dap").step_out()
-        end,
-        desc = "Step out",
-      },
-      {
-        "<F9>",
-        function()
-          require("dap").step_back() -- previous
-        end,
-        desc = "Step back",
+        desc = "Breakpoint Condition",
       },
       {
         "<leader>db",
         function()
           require("dap").toggle_breakpoint()
         end,
-        desc = "Toggle breakpoint",
+        desc = "Toggle Breakpoint",
       },
       {
-        "<leader>dB",
+        "<F5>",
         function()
-          require("dap").set_breakpoint(vim.fn.input({ "Breakpoint condition: " }))
+          require("dap").continue()
         end,
-        desc = "Set breakpoint condition",
+        desc = "Continue",
       },
       {
-        "<leader>de",
+        "<leader>dC",
         function()
-          require("dap").set_exception_breakpoints()
+          require("dap").run_to_cursor()
         end,
-        desc = "Set exception breakpoint",
+        desc = "Run to Cursor",
+      },
+      {
+        "<leader>dg",
+        function()
+          require("dap").goto_()
+        end,
+        desc = "Go to line (no execute)",
+      },
+      {
+        "<F11>",
+        function()
+          require("dap").step_into()
+        end,
+        desc = "Step Into",
+      },
+      {
+        "<leader>dj",
+        function()
+          require("dap").down()
+        end,
+        desc = "Down",
+      },
+      {
+        "<leader>dk",
+        function()
+          require("dap").up()
+        end,
+        desc = "Up",
       },
       {
         "<leader>dl",
         function()
-          require("dap").list_breakpoints()
+          require("dap").run_last()
         end,
-        desc = "List breakpoints",
+        desc = "Run Last",
+      },
+      {
+        "<F12>",
+        function()
+          require("dap").step_out()
+        end,
+        desc = "Step Out",
+      },
+      {
+        "<F10>",
+        function()
+          require("dap").step_over()
+        end,
+        desc = "Step Over",
+      },
+      {
+        "<leader>dp",
+        function()
+          require("dap").pause()
+        end,
+        desc = "Pause",
       },
       {
         "<leader>dr",
         function()
-          require("dap").repl.open()
+          require("dap").repl.toggle()
         end,
-        desc = "Open REPL",
+        desc = "Toggle REPL",
       },
       {
         "<leader>ds",
         function()
-          require("dapui").float_element("scopes", { width = 80, height = 30, enter = true })
+          require("dap").session()
         end,
-        desc = "Open floating scopes",
+        desc = "Session",
+      },
+      {
+        "<F6>",
+        function()
+          require("dap").terminate()
+        end,
+        desc = "Terminate",
+      },
+      {
+        "<leader>dw",
+        function()
+          require("dap.ui.widgets").hover()
+        end,
+        desc = "Widgets",
       },
     },
-    config = function()
-      local dap = require("dap")
-      dap.defaults.fallback.exception_breakpoints = { "uncaught" } -- { 'raised', 'uncaught' }
-
-      vim.fn.sign_define("DapBreakpoint", {
-        text = "●",
-        texthl = "DiagnosticError",
-      })
-      vim.fn.sign_define("DapBreakpointCondition", {
-        text = "",
-        texthl = "DiagnosticError",
-      })
-      vim.fn.sign_define("DapLogPoint", {
-        text = "•",
-        texthl = "DiagnosticInfo",
-      })
-      vim.fn.sign_define("DapStopped", {
-        text = "■",
-        texthl = "Special",
-      })
-
-      -- Python
-      require("dap-python")
-      table.insert(dap.configurations.python, {
-        type = "python",
-        request = "launch",
-        name = "Default interpeter launch",
-        program = "${file}",
-      })
-      table.insert(dap.configurations.python, {
-        type = "python",
-        request = "launch",
-        name = "Launch file",
-        program = "${file}",
-        pythonPath = function()
-          return "python"
-        end,
-      })
-      table.insert(dap.configurations.python, {
-        type = "python",
-        request = "launch",
-        name = "FastAPI main:app",
-        module = "uvicorn",
-        args = {
-          "main:app",
-          "--use-colors",
-        },
-        console = "integratedTerminal",
-      })
-    end,
     dependencies = {
-      {
-        "mfussenegger/nvim-dap-python",
-        lazy = true,
-        opts = {
-          include_configs = true,
-        },
-        config = function(_, opts)
-          local py = require("dap-python")
-          py.setup(os.getenv("VIRTUAL_ENV") .. "/bin/python", opts)
-          py.test_runner = "pytest"
-        end,
-        keys = {
-          {
-            "<leader>dn",
-            function()
-              require("dap-python").test_method()
-            end,
-            desc = "test method",
-          },
-          {
-            "<leader>df",
-            function()
-              require("dap-python").test_class()
-            end,
-            desc = "test class",
-          },
-        },
-      },
-      {
-        "theHamsta/nvim-dap-virtual-text",
-        lazy = true,
-        opts = {
-          enabled = true,
-          enabled_commands = false,
-          highlight_changed_variables = true,
-          all_references = false,
-          all_frames = false,
-        },
-      },
       {
         "nvim-telescope/telescope-dap.nvim",
         config = function()

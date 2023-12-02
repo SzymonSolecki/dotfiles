@@ -7,6 +7,9 @@ return {
         "shellcheck",
         "shfmt",
 
+        -- golang
+        "gopls",
+
         -- python stuff
         "pyright",
         "ruff-lsp",

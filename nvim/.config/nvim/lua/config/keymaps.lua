@@ -16,7 +16,7 @@ vim.keymap.set("n", "<c-_>", function()
 end, { expr = true, desc = "Comment" })
 
 local lazyterm = function()
-  Util.float_term(nil, { cwd = Util.get_root() })
+  Util.terminal.open(nil, { cwd = Util.root.get() })
 end
 vim.keymap.set("n", "<C-Bslash>", lazyterm, { desc = "Terminal (root dir)" })
 vim.keymap.set("t", "<C-Bslash>", "<cmd>close<cr>", { desc = "Hide Terminal" })

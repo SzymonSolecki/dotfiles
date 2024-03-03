@@ -13,7 +13,7 @@ return {
         -- python stuff
         "pyright",
         "ruff-lsp",
-        "isort",
+        "ruff",
       },
     },
   },

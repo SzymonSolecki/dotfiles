@@ -39,6 +39,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 export PATH=$PATH:/home/szymon/bin
+export PATH=$PATH:/usr/local/go/bin
 
 
 
@@ -61,13 +62,15 @@ alias l='ls -alh'
 alias vim='nvim'
 alias open='xdg-open'
 
+alias fp='cd "$(find ~/Documents/Dev -maxdepth 2 -type d | sed 1d | fzf)"'
+alias fd='cd "$(find . -type d | sed 1d | fzf)"'
 
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 bindkey "\e[3~" delete-char
 
 bindkey '^ ' autosuggest-accept
-eval "`dircolors -b ~/.dircolors`"
+# eval "`dircolors -b ~/.dircolors`"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

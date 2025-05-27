@@ -6,18 +6,11 @@
 # General
 # -----------------------------------------------------
 alias c='clear'
-alias nf='fastfetch'
-alias pf='fastfetch'
-alias ff='fastfetch'
 alias ls='eza -a --icons=always'
-alias ll='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
-alias shutdown='systemctl poweroff'
 alias v='$EDITOR'
 alias vim='$EDITOR'
-alias ts='~/.config/ml4w/scripts/snapshot.sh'
-alias wifi='nmtui'
-alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
+alias lg='lazygit'
 
 # -----------------------------------------------------
 # ML4W Apps
@@ -35,13 +28,6 @@ alias ml4w-qtile-diagnosis='~/.config/ml4w/qtile/scripts/diagnosis.sh'
 alias ml4w-update='~/.config/ml4w/update.sh'
 
 # -----------------------------------------------------
-# Window Managers
-# -----------------------------------------------------
-
-alias Qtile='startx'
-# Hyprland with Hyprland
-
-# -----------------------------------------------------
 # Scripts
 # -----------------------------------------------------
 alias ascii='~/.config/ml4w/scripts/figlet.sh'
@@ -51,6 +37,3 @@ alias ascii='~/.config/ml4w/scripts/figlet.sh'
 # -----------------------------------------------------
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
-# -----------------------------------------------------
-# Qtile
-# -----------------------------------------------------

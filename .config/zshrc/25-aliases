@@ -11,6 +11,7 @@ alias lt='eza -a --tree --level=1 --icons=always'
 alias v='$EDITOR'
 alias vim='$EDITOR'
 alias lg='lazygit'
+alias fp='. ~/.config/zshrc/scripts/cd_to_project.sh'
 
 # -----------------------------------------------------
 # ML4W Apps

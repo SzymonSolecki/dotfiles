@@ -12,6 +12,7 @@ alias v='$EDITOR'
 alias vim='$EDITOR'
 alias lg='lazygit'
 alias fp='. ~/.config/zshrc/scripts/cd_to_project.sh'
+alias ds='dnf search'
 
 # -----------------------------------------------------
 # ML4W Apps

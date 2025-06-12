@@ -11,6 +11,9 @@
 
 /* ---- Configuration ---- */
 configuration {
+    sort: true;
+    levenshtein-sort: false;
+
     modi:                       "drun,filebrowser,window,run";
     font:                       "Fira Sans 11";
     show-icons:                 true;
@@ -19,12 +22,19 @@ configuration {
     display-run:                 " ";
     display-filebrowser:         "  ";
     display-window:              "  ";
-	drun-display-format:        "{name}";
+	// drun-display-format:        "{name}";
     hover-select:               false;
     scroll-method:              1;
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
     window-format:              "{w} · {c} · {t}";
+
+    kb-row-up: "Control+k";
+    kb-row-down: "Control+j";
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-remove-to-eol: "";
+    kb-cancel: "Control+c,Escape";
+    kb-secondary-copy: "Control+C";
     
 }
 
@@ -247,3 +257,5 @@ textbox {
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
+
+@theme "/home/szymon/.local/share/rofi/themes/spotlight-dark.rasi"

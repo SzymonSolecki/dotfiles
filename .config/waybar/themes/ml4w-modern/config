@@ -25,26 +25,24 @@
 
     // Modules Left
     "modules-left": [
-        "custom/appmenu",
-        "hyprland/workspaces",
-        "custom/empty"
-    ],
-
-    // Modules Center
-    "modules-center": [
-        "hyprland/window",
-        "custom/empty"
-    ],
-
-    // Modules Right    
-    "modules-right": [
-        "custom/updates",
         "pulseaudio",
         "tray",
         "bluetooth",
         "power-profiles-daemon",
         "group/hardware",
         "group/tools",
+        "custom/empty"
+    ],
+
+    // Modules Center
+    "modules-center": [
+        "hyprland/workspaces",
+        "custom/empty"
+    ],
+
+    // Modules Right    
+    "modules-right": [
+        "custom/updates",
         "custom/notification",
         "custom/exit",
         "custom/ml4w-welcome",

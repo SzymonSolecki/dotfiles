@@ -296,7 +296,7 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": false
+      "transition-left-to-right": true
     },
     "modules": ["custom/system", "disk", "cpu", "memory", "hyprland/language"]
   },
@@ -307,7 +307,7 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": false
+      "transition-left-to-right": true
     },
     "modules": [
       "custom/tools",

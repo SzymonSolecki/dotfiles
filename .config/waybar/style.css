@@ -1,0 +1,156 @@
+@import "./colors.css";
+
+@define-color color11 @on_primary_fixed;
+@define-color backgroundlight @on_surface;
+@define-color backgrounddark @color11;
+@define-color workspacesbackground1 @on_surface;
+@define-color workspacesbackground2 @color11;
+@define-color bordercolor @on_surface;
+@define-color textcolor1 @on_surface;
+@define-color textcolor2 @color11;
+@define-color textcolor3 @on_surface;
+@define-color iconcolor @on_surface;
+
+* {
+  min-height: 0;
+  /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
+  /* font-family: JetBrainsMono Nerd Font; */
+
+  font-family:
+    "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: rgba(24, 24, 37, 0);
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  all: initial;
+  min-width: 0;
+  box-shadow: inset 0 -3px transparent;
+  padding: 4px 10px;
+  min-height: 0;
+  margin: 4px 4px;
+  border-radius: 8px;
+  color: @primary;
+  background: @background;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: @inverse_primary;
+  background-color: @on_background;
+}
+
+#workspaces button.active {
+  color: @inverse_primary;
+  background: @on_background;
+}
+
+#workspaces button.urgent {
+  background-color: @error;
+}
+
+#clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#custom-music-player,
+#cpu,
+#tray,
+#memory,
+#window,
+#custom-screen-recorder,
+#custom-notification,
+#custom-exit,
+#power-profiles-daemon,
+#custom-gpu {
+  min-height: 0;
+  padding: 2px 10px;
+  border-radius: 8px;
+  margin: 4px 4px;
+  background-color: @background;
+  color: @primary;
+}
+
+#custom-screen-recorder,
+#power-profiles-daemon {
+  padding: 4px 2px 4px 8px;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: @primary;
+}
+
+#custom-notification.notification {
+  color: @error;
+}
+
+#custom-screen-recorder.not-recording {
+  color: @error;
+}
+
+#custom-music-player.playing {
+  color: @primary;
+}
+
+#custom-music-player.paused {
+  color: @on_primary;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#clock {
+  color: @primary;
+}
+
+#clock.simpleclock {
+  color: @primary;
+}
+
+#window {
+  color: @primary;
+}
+
+#pulseaudio.muted {
+  color: @error;
+}
+
+#custom-power {
+  color: @error;
+  padding-right: 5px;
+  font-size: 14px;
+}
+
+@keyframes blink {
+  to {
+    background-color: #f38ba8;
+    color: #181825;
+  }
+}
+
+tooltip {
+  border-radius: 8px;
+}
+
+#tray menu {
+  background: @background;
+  color: white;
+}

@@ -1,0 +1,159 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 26,
+  "spacing": 0,
+  "exclusive": true,
+  "passthrough": false,
+  "fixed-center": true,
+
+  "modules-left": ["hyprland/workspaces", "custom/sep", "hyprland/window"],
+  "modules-center": ["custom/music-player"],
+  "modules-right": [
+    "custom/screen-recorder",
+    "power-profiles-daemon",
+    "custom/sep",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "clock",
+    "clock#date",
+    "custom/sep",
+    "tray",
+    "custom/sep",
+    "custom/notification",
+    "custom/sep",
+    "custom/power",
+  ],
+
+  "power-profiles-daemon": {
+    "format": "{icon} ",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
+    },
+  },
+
+  "custom/power": {
+    "format": " ",
+    "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+    "on-click-right": "hyprlock",
+    "tooltip-format": "Left: Power menu\nRight: Lock screen",
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "",
+      "dnd-notification": " ",
+      "dnd-none": "󰂛",
+      "inhibited-notification": " ",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": " ",
+      "dnd-inhibited-none": " ",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true,
+  },
+
+  "custom/screen-recorder": {
+    "exec": "~/.config/waybar/modules/screen_recorder_init.sh",
+    "interval": 60,
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "~/.config/waybar/modules/screen_recorder.sh save",
+    "on-click-right": "~/.config/waybar/modules/screen_recorder.sh stop",
+  },
+
+  "custom/music-player": {
+    "interval": 3,
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/modules/music_player.sh grep",
+    "on-click": "~/.config/waybar/modules/music_player.sh previous",
+    "on-click-middle": "~/.config/waybar/modules/music_player.sh pause",
+    "on-click-right": "~/.config/waybar/modules/music_player.sh next",
+  },
+
+  "wlr/workspaces": {
+    "on-click": "activate",
+    "format": "{name}",
+    "all-outputs": true,
+    "disable-scroll": false,
+    "active-only": false,
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.{42}).*": "$1..",
+    },
+    "icon": false,
+  },
+
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10,
+  },
+
+  "clock": {
+    "tooltip": false,
+    "format": "  {:%H:%M}",
+  },
+
+  "clock#date": {
+    "format": "  {:L%a %d %b}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#f5e0dc'><b>{}</b></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "today": "<span color='#f38ba8'><b>{}</b></span>",
+      },
+    },
+    "actions": { "on-click-right": "mode" },
+    "min-length": 8,
+    "max-length": 28,
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " muted",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": "󰂑",
+      "headset": "󰂑",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [" ", " ", " "],
+    },
+    "on-click-middle": "pamixer -t",
+    "on-click": "pavucontrol",
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click": "pavucontrol -t 4",
+    "tooltip-format": "{source_desc} | {source_volume}%",
+  },
+
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false,
+  },
+}

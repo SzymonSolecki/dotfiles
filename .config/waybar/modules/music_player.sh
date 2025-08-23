@@ -50,17 +50,20 @@ case "$action" in
 
         echo -e "{\"text\":\""$text"\", \"class\":\""$class"\"}"
         ;;
-    
     pause)
         playerctl --player=$music_player play-pause
         ;;
-    
     previous)
         playerctl --player=$music_player previous
         ;;
-
     next)
         playerctl --player=$music_player next
+        ;;  
+    vol_up)
+        playerctl --player=$music_player volume 0.05+
+        ;;  
+    vol_down)
+        playerctl --player=$music_player volume 0.05-
         ;;  
     *)
         echo "Unknown action: $action. Please use 'grep', 'pause', 'previous', or 'next'."

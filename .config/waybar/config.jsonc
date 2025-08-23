@@ -82,6 +82,8 @@
     "on-click": "~/.config/waybar/modules/music_player.sh previous",
     "on-click-middle": "~/.config/waybar/modules/music_player.sh pause",
     "on-click-right": "~/.config/waybar/modules/music_player.sh next",
+    "on-scroll-down": "~/.config/waybar/modules/music_player.sh vol_down",
+    "on-scroll-up": "~/.config/waybar/modules/music_player.sh vol_up",
   },
 
   "wlr/workspaces": {

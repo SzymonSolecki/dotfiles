@@ -12,6 +12,7 @@ alias v='$EDITOR'
 alias vim='$EDITOR'
 alias lg='lazygit'
 alias fp='. ~/.config/zshrc/scripts/cd_to_project.sh'
+alias ff='cd "$(fd -H -td -tl --max-depth 3 | fzf)"'
 alias ds='dnf search'
 
 # -----------------------------------------------------

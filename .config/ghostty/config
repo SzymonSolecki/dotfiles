@@ -1,0 +1,6 @@
+font-family = "JetBrainsMono Nerd Font"
+window-decoration = false
+background-opacity = 0.1
+theme = catppuccin-frappe
+confirm-close-surface = false
+gtk-single-instance = true

@@ -6,5 +6,6 @@
 # Exports
 # -----------------------------------------------------
 export EDITOR=nvim
+export ZSH="$HOME/.oh-my-zsh"
 export PATH=$PATH:~/.cargo/bin/
 export BROWSER=zen-browser

@@ -6,7 +6,8 @@
 # General
 # -----------------------------------------------------
 alias c='clear'
-alias ls='eza -a --icons=always'
+alias ls='eza -al --icons=always'
+alias l='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
 alias v='$EDITOR'
 alias vim='$EDITOR'

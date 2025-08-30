@@ -4,11 +4,6 @@
 POSH=agnoster
 
 # -----------------------------------------------------
-# oh-myzsh themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# -----------------------------------------------------
-# ZSH_THEME=robbyrussell
-
-# -----------------------------------------------------
 # oh-myzsh plugins
 # -----------------------------------------------------
 plugins=(
@@ -29,7 +24,6 @@ plugins=(
 # Set-up oh-my-zsh
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit && compinit
-source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)

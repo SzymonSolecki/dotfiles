@@ -1,15 +1,12 @@
 return {
   {
-    "loctvl842/monokai-pro.nvim",
+    "Shatur/neovim-ayu",
     lazy = true,
-    opts = {
-      devicons = true,
-    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "ayu-mirage",
     },
   },
 }

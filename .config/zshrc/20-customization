@@ -8,15 +8,9 @@ POSH=agnoster
 # -----------------------------------------------------
 plugins=(
     git
-    sudo
-    web-search
-    archlinux
     zsh-autosuggestions
-    zsh-syntax-highlighting
     fast-syntax-highlighting
-    copyfile
-    copybuffer
-    dirhistory
+    extract
 )
 
 # Set-up oh-my-zsh
@@ -28,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 # -----------------------------------------------------
 source <(fzf --zsh)
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,bold"
 # zsh history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

@@ -258,4 +258,4 @@ textbox {
     horizontal-align:            0.5;
 }
 
-@theme "/home/szymon/.local/share/rofi/themes/spotlight-dark.rasi"
+@theme "/home/szymon/.config/rofi/theme.rasi"

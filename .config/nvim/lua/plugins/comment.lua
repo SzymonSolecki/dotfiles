@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.comment",
+  "nvim-mini/mini.comment",
   opts = function(_, opts)
     opts.mappings = {
       comment = "<C-_>",

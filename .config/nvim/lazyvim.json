@@ -1,12 +1,11 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.coding.blink",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
-    "NEWS.md": "10960"
+    "NEWS.md": "11866"
   },
   "version": 8
 }

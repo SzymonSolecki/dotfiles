@@ -66,13 +66,19 @@ echo ":: Wallpaper Filename: $wallpaperfilename"
 # -----------------------------------------------------
 
 echo ":: Execute matugen with $used_wallpaper"
-$HOME/.cargo/bin/matugen image $used_wallpaper -m "dark"
+$HOME/.cargo/bin/matugen image $used_wallpaper
 
 # -----------------------------------------------------
 # Reload Waybar
 # -----------------------------------------------------
 
 killall -SIGUSR2 waybar
+
+# -----------------------------------------------------
+# Reload Ghostty
+# -----------------------------------------------------
+
+systemctl reload --user app-com.mitchellh.ghostty.service
 
 # -----------------------------------------------------
 # Update SwayNC

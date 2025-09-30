@@ -1,0 +1,43 @@
+# Matugen template for Ghostty Terminal Emulator
+# https://github.com/ghostty-org/ghostty
+
+background = #11140e
+foreground = #e2e3d9
+
+cursor-color = #add28e
+cursor-text = #e2e3d9
+
+selection-background = #29341f
+selection-foreground = #becbae
+
+# black
+palette = 8=#e2e3d9
+palette = 0=#c4c8ba
+
+# red
+palette = 1=#ac8a8c
+palette = 9=#c49ea0
+
+# green
+palette = 2=#8aac8b
+palette = 1=#9ec49f
+
+# yellow
+palette = 3=#becbae
+palette = 1=#3f4a34
+
+# blue
+palette = 4=#add28e
+palette = 1=#314e19
+
+# magenta
+palette = 5=#ac8aac
+palette = 1=#c49ec4
+
+# cyan
+palette = 6=#a0cfce
+palette = 1=#1e4e4d
+
+# white
+palette = 1=#e2e3d9
+palette = 7=#add28e

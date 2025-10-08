@@ -12,7 +12,7 @@
 /* ---- Configuration ---- */
 configuration {
     sort: true;
-    levenshtein-sort: false;
+    matching: "fuzzy";
 
     modi:                       "drun,filebrowser,window,run";
     font:                       "Fira Sans 11";

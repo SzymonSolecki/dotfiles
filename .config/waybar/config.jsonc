@@ -93,6 +93,14 @@
     "disable-scroll": false,
     "active-only": false,
   },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "show-special": true,
+    "format-icons": {
+      "spotify": " ",
+      "messanger": "",
+    },
+  },
 
   "hyprland/window": {
     "format": "{}",

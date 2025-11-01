@@ -10,6 +10,7 @@ ACTION_NAME="EDIT"
 mkdir -p "$OUTPUT_DIR"
 
 hyprshot -m region -s -o "$TEMP_DIR" -f "$TEMP_FILE" && wl-copy <"$TEMP_PATH"
+sleep 0.1
 
 if [[ -f "$TEMP_PATH" ]]; then
   ACTION=$(notify-send -w "Screenshot Taken" "Click to edit in Satty." \

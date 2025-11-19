@@ -1,0 +1,13 @@
+{
+  "autolaunch": false,
+  "background": true,
+  "brightness": 10,
+  "darktheme": true,
+  "developer": false,
+  "disableelgato": false,
+  "language": "en",
+  "separatewine": false,
+  "statistics": true,
+  "updatecheck": true,
+  "version": "2.7.0"
+}

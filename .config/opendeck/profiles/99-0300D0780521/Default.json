@@ -1,0 +1,846 @@
+{
+  "keys": [
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/previous@2x.png",
+        "name": "Previous Song",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/pi/previous-song-button.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/previous@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Skips to the previous song. Hold for backward seek.",
+        "uuid": "com.ntanis.essentials-for-spotify.previous-song-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.0.0",
+      "current_state": 0,
+      "settings": {
+        "step": 5
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/previous@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/play-pause@2x.png",
+        "name": "Play / Pause",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/pi/play-pause-button.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/play@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          },
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/pause@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Toggles between playing and pausing the current song.",
+        "uuid": "com.ntanis.essentials-for-spotify.play-pause-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.1.0",
+      "current_state": 1,
+      "settings": {
+        "action": "play_pause"
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/play@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        },
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/pause@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/next@2x.png",
+        "name": "Next Song",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/pi/next-song-button.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/next@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Advances to the next song. Hold for forward seek.",
+        "uuid": "com.ntanis.essentials-for-spotify.next-song-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.2.0",
+      "current_state": 0,
+      "settings": {
+        "step": 5
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/next@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/volume-down@2x.png",
+        "name": "Volume Down",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/pi/volume-down-button.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/volume-down@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Decreases the playback volume.",
+        "uuid": "com.ntanis.essentials-for-spotify.volume-down-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.3.0",
+      "current_state": 0,
+      "settings": {
+        "step": 5
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/volume-down@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/volume-up@2x.png",
+        "name": "Volume Up",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/pi/volume-up-button.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/volume-up@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Increases the playback volume.",
+        "uuid": "com.ntanis.essentials-for-spotify.volume-up-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.4.0",
+      "current_state": 0,
+      "settings": {
+        "step": 5
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/volume-up@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/song-stack@2x.png",
+        "name": "Song Stack",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/pi/song-stack-button.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/song-stack@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Displays the information of the current song and offers a variety of control actions.",
+        "uuid": "com.ntanis.essentials-for-spotify.song-stack-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.5.0",
+      "current_state": 0,
+      "settings": {
+        "double_press": "next_song",
+        "isInMultiAction": false,
+        "long_press": "like_unlike",
+        "show": [
+          "name",
+          "artists",
+          "liked"
+        ],
+        "single_press": "play_pause",
+        "spotify_device_id": "09f3933b35d1a4a39be2f830ca159befd970440f",
+        "spotify_device_label": "Raspberry Pi 4",
+        "triple_press": "previous_song"
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "0.jpeg",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "Gigantia\nBoston 168",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad",
+          "Encoder"
+        ],
+        "disable_automatic_states": false,
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "name": "Run Command",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Run a command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.6.0",
+      "current_state": 0,
+      "settings": {
+        "down": "playerctl -i spotify play-pause",
+        "file": "",
+        "rotate": "",
+        "show": false,
+        "up": ""
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "0.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/transfer-playback@2x.png",
+        "name": "Transfer Playback",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/pi/transfer-playback-button.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/transfer-playback@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Allows you to transfer the playback to another device.",
+        "uuid": "com.ntanis.essentials-for-spotify.transfer-playback-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.7.0",
+      "current_state": 0,
+      "settings": {
+        "isInMultiAction": false,
+        "spotify_device_id": "0163f8ae2757d697804c310020ad727b82279ca1",
+        "spotify_device_label": "fedora.home"
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/transfer-playback@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "fedora\nhome",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/transfer-playback@2x.png",
+        "name": "Transfer Playback",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/pi/transfer-playback-button.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/transfer-playback@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Allows you to transfer the playback to another device.",
+        "uuid": "com.ntanis.essentials-for-spotify.transfer-playback-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.8.0",
+      "current_state": 0,
+      "settings": {
+        "isInMultiAction": false,
+        "spotify_device_id": "09f3933b35d1a4a39be2f830ca159befd970440f",
+        "spotify_device_label": "Raspberry Pi 4"
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/transfer-playback@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "Raspberry\nPi\n4",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/like-unlike@2x.png",
+        "name": "Like / Unlike",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/like@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          },
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/unlike@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Adds the current song to your liked songs or removes it if already liked.",
+        "uuid": "com.ntanis.essentials-for-spotify.like-unlike-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.9.0",
+      "current_state": 0,
+      "settings": {},
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/like@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        },
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/unlike@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/actions/shuffle@2x.png",
+        "name": "Shuffle",
+        "plugin": "com.ntanis.essentials-for-spotify.sdPlugin",
+        "property_inspector": "",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/shuffle-inactive@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          },
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/shuffle-active@2x.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Activates or deactivates shuffle play.",
+        "uuid": "com.ntanis.essentials-for-spotify.shuffle-button",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.10.0",
+      "current_state": 1,
+      "settings": {},
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/shuffle-inactive@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        },
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.ntanis.essentials-for-spotify.sdPlugin/images/states/shuffle-active@2x.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    null,
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": false,
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+        "name": "Switch Profile",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "name": "",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "Switch the selected profile",
+        "uuid": "com.amansprojects.starterpack.switchprofile",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.12.0",
+      "current_state": 0,
+      "settings": {
+        "device": "99-0300D0780521",
+        "profile": "System"
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "0.png",
+          "name": "",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "System",
+          "underline": false
+        }
+      ]
+    },
+    null,
+    null,
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.elgato.discord.sdPlugin/images/icons/deafen_white.svg",
+        "name": "Deafen",
+        "plugin": "com.elgato.discord.sdPlugin",
+        "property_inspector": "plugins/com.elgato.discord.sdPlugin/inspectors/index.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.elgato.discord.sdPlugin/images/actions/deafen_0.svg",
+            "name": "Deafen",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          },
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.elgato.discord.sdPlugin/images/actions/deafen_1.svg",
+            "name": "Undeafen",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "",
+        "uuid": "com.elgato.discord.deafen",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.15.0",
+      "current_state": 0,
+      "settings": {
+        "isInMultiAction": false
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.elgato.discord.sdPlugin/images/actions/deafen_0.svg",
+          "name": "Deafen",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        },
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.elgato.discord.sdPlugin/images/actions/deafen_1.svg",
+          "name": "Undeafen",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    {
+      "action": {
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true,
+        "icon": "plugins/com.elgato.discord.sdPlugin/images/icons/mute_white.svg",
+        "name": "Mute",
+        "plugin": "com.elgato.discord.sdPlugin",
+        "property_inspector": "plugins/com.elgato.discord.sdPlugin/inspectors/index.html",
+        "states": [
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.elgato.discord.sdPlugin/images/actions/mute_0.svg",
+            "name": "Mute",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          },
+          {
+            "alignment": "middle",
+            "colour": "#FFFFFF",
+            "family": "Liberation Sans",
+            "image": "plugins/com.elgato.discord.sdPlugin/images/actions/mute_1.svg",
+            "name": "Unmute",
+            "show": true,
+            "size": 16,
+            "style": "Regular",
+            "text": "",
+            "underline": false
+          }
+        ],
+        "supported_in_multi_actions": true,
+        "tooltip": "",
+        "uuid": "com.elgato.discord.mute",
+        "visible_in_action_list": true
+      },
+      "children": null,
+      "context": "Keypad.16.0",
+      "current_state": 0,
+      "settings": {
+        "isInMultiAction": false
+      },
+      "states": [
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.elgato.discord.sdPlugin/images/actions/mute_0.svg",
+          "name": "Mute",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        },
+        {
+          "alignment": "middle",
+          "colour": "#FFFFFF",
+          "family": "Liberation Sans",
+          "image": "plugins/com.elgato.discord.sdPlugin/images/actions/mute_1.svg",
+          "name": "Unmute",
+          "show": true,
+          "size": 16,
+          "style": "Regular",
+          "text": "",
+          "underline": false
+        }
+      ]
+    },
+    null
+  ],
+  "sliders": []
+}

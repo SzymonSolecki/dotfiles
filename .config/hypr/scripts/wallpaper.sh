@@ -45,6 +45,8 @@ used_wallpaper=$wallpaper
 echo ":: Setting wallpaper with source image $wallpaper"
 tmpwallpaper=$wallpaper
 
+for m in $(hyprctl monitors | grep "Monitor" | awk '{print $2}'); do hyprctl hyprpaper wallpaper $m,$wallpaper; done
+
 # -----------------------------------------------------
 # Copy path of current wallpaper to cache file
 # -----------------------------------------------------

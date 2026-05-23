@@ -11,8 +11,8 @@ return {
         -- "gopls",
 
         -- python stuff
-        "pyright",
         "ruff",
+        "ty",
       },
     },
   },

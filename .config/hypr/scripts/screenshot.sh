@@ -13,10 +13,12 @@ hyprshot -m region -s -o "$TEMP_DIR" -f "$TEMP_FILE" && wl-copy <"$TEMP_PATH"
 sleep 0.1
 
 if [[ -f "$TEMP_PATH" ]]; then
-  ACTION=$(notify-send -w "Screenshot Taken" "Click to edit in Satty." \
-    -i "$TEMP_PATH" \
-    -u critical \
-    -A "$ACTION_NAME=Edit")
+  ACTION=$(
+    notify-send -w "Screenshot Taken" "Click to edit in Satty." \
+      -i "$TEMP_PATH" \
+      -A "$ACTION_NAME=Edit" \
+      -t 2000
+  )
 
   if [ "$ACTION" == "$ACTION_NAME" ]; then
     satty --filename "$TEMP_PATH" --output-filename "$OUTPUT_DIR/screenshot_${TIMESTAMP}.png" --copy-command "wl-copy" --early-exit

@@ -34,17 +34,17 @@ systemctl --user stop xdg-desktop-portal-hyprland
 sleep $_sleep1
 
 # Start xdg-desktop-portal-hyprland
-/usr/lib/xdg-desktop-portal-hyprland &
+/usr/libexec/xdg-desktop-portal-hyprland &
 sleep $_sleep1
 
 # Start xdg-desktop-portal-gtk
 if [ -f /usr/lib/xdg-desktop-portal-gtk ]; then
-    /usr/lib/xdg-desktop-portal-gtk &
-    sleep $_sleep1
+  /usr/lib/xdg-desktop-portal-gtk &
+  sleep $_sleep1
 fi
 
 # Start xdg-desktop-portal
-/usr/lib/xdg-desktop-portal &
+/usr/libexec/xdg-desktop-portal &
 sleep $_sleep2
 
 # Start required services

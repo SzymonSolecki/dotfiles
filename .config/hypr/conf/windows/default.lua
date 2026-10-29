@@ -12,8 +12,8 @@ hl.config({
 		gaps_out = 8,
 		border_size = 3,
 		col = {
-			active_border = color11,
-			inactive_border = color8,
+			active_border = colors.primary,
+			inactive_border = colors.inverse_primary,
 		},
 		layout = "master",
 		resize_on_border = false,

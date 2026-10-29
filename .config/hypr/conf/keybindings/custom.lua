@@ -14,7 +14,10 @@ local SCRIPTS = "~/.config/ml4w/scripts"
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("ghostty +new-window"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/ml4w/settings/browser.sh"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("nautilus --new-window"))
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("LC_MONETARY=pl_PL.UTF-8 rofi -show calc -modi calc -no-show-match -no-sort"))
+hl.bind(
+	mainMod .. " + C",
+	hl.dsp.exec_cmd("LC_MONETARY=pl_PL.UTF-8 rofi -show calc -modi calc -no-show-match -no-sort")
+)
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -sorting-method fzf -sort"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill rofi || rofi -show window"))
 
@@ -47,6 +50,17 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
 hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.layout("orientationnext"))
 hl.bind(mainMod .. " + CTRL + tab", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.layout("swapwithmaster master"))
+
+hl.bind("CTRL + SHIFT + TAB", function()
+	local window = hl.get_active_window()
+	if not window then
+		return
+	end
+	hl.dispatch(hl.dsp.window.cycle_next({
+		floating = not window.floating,
+		tiled = window.floating,
+	}))
+end, { description = "Switch focus between tiled and floating windows" })
 
 hl.bind("ALT + TAB", hl.dsp.focus({ workspace = "m+1" }))
 hl.bind("ALT + SHIFT + TAB", hl.dsp.focus({ workspace = "emptynm" }))
@@ -100,11 +114,23 @@ hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.move({ workspace = "name:Gaming
 hl.bind(mainMod .. " + SHIFT + code:191", hl.dsp.window.move({ workspace = "name:Alt", follow = false }))
 hl.bind(mainMod .. " + grave", hl.dsp.workspace.toggle_special("messanger"))
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
-hl.bind(mainMod .. " + Z", function() local w = hl.get_active_workspace(); if not w then return end; hl.dispatch(hl.dsp.workspace.move({ workspace = w.id, monitor = -1 })) end)
+hl.bind(mainMod .. " + Z", function()
+	local w = hl.get_active_workspace()
+	if not w then
+		return
+	end
+	hl.dispatch(hl.dsp.workspace.move({ workspace = w.id, monitor = -1 }))
+end)
 
 -- Fn keys
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ +5%"))
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%"))
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ +5%")
+)
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%")
+)
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ toggle"))
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl pause"))
@@ -114,4 +140,3 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOUR
 
 -- pass bind for discord push to talk
 hl.bind("code:191", hl.dsp.pass({ window = "class:^(discord)$" }), { ignore_mods = true })
-
